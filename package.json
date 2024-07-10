@@ -1,0 +1,25 @@
+{
+  "name": "portfolio.feli",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/react": "^3.4.0",
+    "@astrojs/tailwind": "^5.1.0",
+    "@fontsource-variable/jetbrains-mono": "^5.0.19",
+    "@fontsource/jetbrains-mono": "^5.0.18",
+    "astro": "^4.4.0",
+    "photoswipe": "^5.4.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "swiper": "^11.1.4",
+    "swiper-react": "^1.0.0",
+    "tailwindcss": "^3.4.1"
+  }
+}

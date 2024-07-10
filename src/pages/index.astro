@@ -1,0 +1,91 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import Badge from "../components/Badge.astro";
+import GithubIcon from "../components/Github.astro";
+import LinkedInIcon from "../components/LinkedIn.astro";
+import MailIcon from "../components/Mail.astro";
+import WebIcon from "../components/WebIcon.astro";
+import SocialPill from "../components/SocialPill.astro";
+import SectionContainer from '../components/SectionContainer.astro';
+import Proyects from '../components/Proyects.astro';
+import Carousel from "../components/Carousel.astro"
+import Footer from '../components/Footer.astro';
+import Contact from "../components/Contact.astro"
+---
+
+<Layout title="Felipe Aguirre - Desarrollador y programador web">
+	<main id="inicio" class="p-5">
+		<SectionContainer>
+			<img
+				class="rounded-full w-20 h-20 mb-4"
+				src="https://avatars.githubusercontent.com/u/124820124?v=4"
+				alt="feli_foto"
+			/>
+		
+			<h1 class="text-white text-4xl font-bold flex flex-row gap-x-4 pb-4">
+				Hola! Soy Felipe Aguirre 
+				<a 
+					href="https://www.linkedin.com/in/feliaguirre7/"
+					target="_blank"
+					rel="noopener"
+					class="flex justify-center items-center">
+					<Badge> Disponible para trabajar </Badge>
+				</a>
+			</h1>
+			<h2 class="text-white text-2xl opacity-80 text-wrap">
+				<span class="text-green-200/90">Desarrollador Web Full Stack Junior</span>,
+				de <span class="text-red-200/100">Santiago del Estero</span> en
+				<span class="text-teal-200">Arg</span><span>ent</span><span class="text-teal-200">ina</span> 
+				con un fuerte enfoque en el diseño y mucha pasión por la tecnología
+			</h2>
+			<nav class="flex gap-x-2 p-5 text-white">
+				<SocialPill href="https://www.linkedin.com/in/feliaguirre7/">
+					<LinkedInIcon class="w-6 h-6"></LinkedInIcon>
+					LinkedIn
+				</SocialPill>
+				<SocialPill href="https://github.com/FeliAguirre7">
+					<GithubIcon class="w-6 h-6"></GithubIcon>
+					Github
+				</SocialPill>
+				<SocialPill>
+					<MailIcon class="w-6 h-6"></MailIcon>
+					fely_s.a@hotmail.com
+				</SocialPill>
+			</nav>
+		</SectionContainer>
+		<div id="conocimiento" class="flex justify-center">
+			<h1 class="text-green-200/90">Tecnologías que manejo</h1>
+
+		</div>
+		<SectionContainer>
+			<div class="container mx-auto my-10">
+    
+      <Carousel/>
+    </div>
+		</SectionContainer>
+
+		<SectionContainer>
+		<h2 id="proyectos" class="text-white text-2x1 font-semibold mb-6 flex gap-x-2 items-center">
+				<WebIcon class="size-6 flex gap-x-2 items-center"></WebIcon>
+				Proyectos
+			</h2>
+			<Proyects />
+		</SectionContainer>
+
+		<!-- <SectionContainer>
+			<h2 id="Diseños" class="text-white text-2x1 font-semibold mb-6 flex gap-x-2 items-center">
+				
+				</h2>
+				
+			</SectionContainer> -->
+
+		<div id="contact" class="flex justify-center">
+			<Contact></Contact>
+		</div>
+		<SectionContainer>
+			<Footer></Footer>
+		</SectionContainer>
+	</main>
+</Layout>
+
