@@ -1,0 +1,250 @@
+---
+const tecLogos={
+  twind:"https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat&logo=tailwind-css&logoColor=white",
+  nextJs: "https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white",
+  js: "https://img.shields.io/badge/JavaScript-ES6-yellow",
+  react:"https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=white&style=for-the-badge",
+  redux:"https://img.shields.io/badge/Redux-764ABC?logo=redux&logoColor=white&style=for-the-badge",
+  node:"https://img.shields.io/badge/Node.js-339933?style=flat&logo=node.js&logoColor=white",
+  express:"https://img.shields.io/badge/Express.js-000000?logo=express&logoColor=white&style=for-the-badge",
+sequelize:"https://img.shields.io/badge/Sequelize-52B0E7?logo=sequelize&logoColor=white&style=for-the-badge",
+postgreSql:"https://img.shields.io/badge/PostgreSQL-4169E1?style=flat&logo=postgresql&logoColor=white",
+
+}
+
+const PROJECTS= [
+    {
+        title: "Plataforma E-Commerce Kimey PetShop",
+        description: "Página web E-commerce de articulos para mascotas con todas las funcionalidades que este tipo de aplicaciones necesita, gestión de favoritos, carrito de compras, panel de administración e integración con MercadoPago, autenticación de terceros, etc. También cuenta con un diseño fiel y consistente en todos los apartados del sitio con imagenes editadas por mi mismo",
+        link:"https://www.youtube.com/watch?v=wqjOESK5LcA&ab_channel=FeliAguirre",
+        github:"https://github.com/FeliAguirre7/Pet-Shop-PF-Henry",
+        media: "https://www.youtube.com/embed/wqjOESK5LcA", // Cambia "image" a "media" y proporciona la URL de embed del video
+        type: "video", // Agrega un campo "type" para especificar el tipo de media
+        tags: [tecLogos.twind, tecLogos.nextJs, tecLogos.js],
+    },
+    {
+        title: "Proyecto de paises y turismo",
+        description: "Plataforma ilustrativa e informativa, se basa en el uso de una API externa para renderizar distintas tarjetas de paises, ordenadas en distintas páginas y con la posibilidad de buscar algún país en especifico, de filtrar por continente o actividad turistica, y también la función de crear una actividad turistica para determinados paises.",
+        link: "https://second-project.vercel.app/",
+        media:"https://res.cloudinary.com/dqt0isvyc/image/upload/v1717447645/countries_pi_d5mnmy.jpg",
+        type:"image",
+        github: "https://github.com/FeliAguirre7/countries",
+        tags: [tecLogos.react, tecLogos.redux, tecLogos.node, tecLogos.express, tecLogos.sequelize, tecLogos.postgreSql], // Etiquetas del segundo proyecto
+    },
+    {
+        title: "Sistema de gestión de embarcaciones y socios",
+        description: "La aplicación es una solución integral para un camping que gestiona embarcaciones, permitiendo a los socios agregar las suyas. Facilita el registro de usuarios, la asignación y control de embarcaciones con validaciones requeridas por el cliente, y monitorea el estado de las mismas, si se encuentran en el agua o no.",
+        link:"https://www.youtube.com/watch?v=C6Vhxo74FmY&ab_channel=EvelynNobille",
+        github:"https://github.com/Club-de-pesca-El-Bigua",
+        media: "https://res.cloudinary.com/dqt0isvyc/image/upload/v1721937326/El_bigua_presentacion_Moment_lnaoqz.jpg", // Cambia "image" a "media" y proporciona la URL de embed del video
+        type: "image", // Agrega un campo "type" para especificar el tipo de media
+        tags: [tecLogos.twind, tecLogos.nextJs, tecLogos.js, tecLogos.react],
+    },
+]
+---
+
+<style>
+  .tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px; /* Espacio entre los badges */
+  }
+  .tag-item {
+    display: inline-block;
+    margin: 0 4px;
+  }
+</style>
+{
+    PROJECTS.map(({ title, description, tags, type, media, link, github }) => (
+        <article key={title} class="p-5">
+            <h3 class="text-red-200/100 p-4 text-xl">{title}</h3>
+            <p class="text-white p-2">{description}</p>
+            <ul class="tags-container">
+            {tags.map((tag) =>
+          tag.includes('https://') ? (
+            <li key={tag} class="tag-item">
+              <img src={tag} alt="Technology logo" class="inline-block mr-4 p-2" />
+            </li>
+          ) : (
+            <li key={tag} class="inline-block mr-2">{tag}</li>
+          )
+        )}
+            </ul>
+            {type === "video" ? (
+                <iframe
+                    width="700"
+                    height="500"
+                    src={media} // Usa la variable media aquí para el video
+                    title={title}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    class="p-4"
+                ></iframe>
+            ) : (
+            <img
+                src={media} // Usa la variable image aquí
+                alt={title}
+                class="p-4" // Cambia alt para que coincida con el título del proyecto
+            />
+        )}
+            <a href={link} class="text-white p-7" target="_blank" rel="noopener noreferrer">Visitar Proyecto</a>
+            <a href={github} class="text-white p-7" target="_blank" rel="noopener noreferrer">Ver en GitHub</a>
+        </article>
+    ))
+}
+
+
+
+
+
+<!-- ---
+const PROJECTS = [
+    {
+        title: "Plataforma E-Commerce Kimey PetShop",
+        description: "Página web E-commerce de artículos para mascotas con todas las funcionalidades que este tipo de aplicaciones necesita, gestión de favoritos, carrito de compras, panel de administración e integración con MercadoPago, autenticación de terceros, etc. También cuenta con un diseño fiel y consistente en todos los apartados del sitio con imágenes editadas por mí mismo.",
+        link: "https://www.youtube.com/watch?v=wqjOESK5LcA&ab_channel=FeliAguirre",
+        github: "https://github.com/FeliAguirre7/Pet-Shop-PF-Henry",
+        media: "https://www.youtube.com/embed/wqjOESK5LcA",
+        type: "video",
+        tags: ["Tailwind", "Next JS", "Javascript"],
+        category: "desarrollo"
+    },
+    {
+        title: "Proyecto de países y turismo",
+        description: "Plataforma ilustrativa e informativa, se basa en el uso de una API externa para renderizar distintas tarjetas de países, ordenadas en distintas páginas y con la posibilidad de buscar algún país en específico, de filtrar por continente o actividad turística, y también la función de crear una actividad turística para determinados países.",
+        link: "https://second-project.vercel.app/",
+        media: "https://res.cloudinary.com/dqt0isvyc/image/upload/v1717447645/countries_pi_d5mnmy.jpg",
+        type: "image",
+        github: "https://github.com/FeliAguirre7/countries",
+        tags: ["React", "Redux", "Node", "Express", "Sequelize"],
+        category: "desarrollo"
+    }
+];
+
+let selectedCategory = "desarrollo";
+
+function setCategory(category) {
+  selectedCategory = category;
+}
+
+const filteredProjects = PROJECTS.filter(project => project.category === selectedCategory);
+---
+
+<style>
+    .container {
+      background-color: rgba(0, 128, 0, 0.2); /* Verde con más transparencia */
+      padding: 2rem; /* Aumenta el padding para un mayor espaciado interno */
+      border-radius: 7px; /* Aumenta el border-radius para esquinas más redondeadas */
+      border: 1px solid rgba(0, 128, 0, 0.5); /* Borde verde más grueso */
+      min-height: 600px; /* Ajusta la altura mínima según sea necesario */
+    }
+  
+    .card {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.2s;
+      border-radius: 6px; /* Aumenta el border-radius para las tarjetas */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Agrega una sombra para un efecto de elevación */
+    
+    }
+    .card:hover {
+      transform: scale(1.1); /* Agranda un poco más al hacer hover */
+    }
+    .card-content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.2s;
+      padding: 0.5rem; /* Agrega padding interno para el contenido */
+      box-sizing: border-box; /* Incluye padding en el tamaño total */
+    }
+    .card:hover .card-content {
+      opacity: 1;
+    }
+    .tabs {
+      display: flex;
+      gap: 1.5rem; /* Aumenta el gap entre las pestañas */
+      margin-bottom: 1.5rem; /* Aumenta el margen inferior */
+    }
+    .tab {
+      padding: 0.75rem 1.5rem; /* Aumenta el padding para las pestañas */
+      cursor: pointer;
+      border: 1px solid #ccc;
+      border-radius: 6px; /* Aumenta el border-radius para las pestañas */
+    }
+    .tab-active {
+      background-color: #007bff;
+      color: white;
+      border-color: #007bff;
+    }
+  </style>
+  
+  <script>
+    function handleTabClick(category) {
+      document.querySelectorAll('.tab').forEach(tab => {
+        tab.classList.remove('tab-active');
+      });
+      document.querySelector(`#${category}`).classList.add('tab-active');
+      setCategory(category);
+    }
+  </script>
+  
+  <div>
+    <div class="tabs">
+      <div id="desarrollo" class="tab tab-active" onClick={() => handleTabClick('desarrollo')}>
+        Desarrollo
+      </div>
+      <div id="diseño" class="tab" onClick={() => handleTabClick('diseño')}>
+        Diseño
+      </div>
+    </div>
+    <div class="container">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {filteredProjects.map(({ title, description, tags, type, media, link, github }) => (
+          <div class="card" key={title}>
+            {type === "video" ? (
+              <iframe
+                width="100%"
+                height="100%"
+                src={media}
+                title={title}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            ) : (
+              <img
+                src={media}
+                alt={title}
+                class="w-full h-full object-cover"
+              />
+            )}
+            <div class="card-content">
+              <h3 class="text-xl font-bold mb-2">{title}</h3>
+              <p class="mb-4 ">{description}</p>
+              <ul class="flex flex-wrap gap-2 mb-4">
+                {tags.map(tag => (
+                  <li key={tag} class="bg-blue-500 text-white px-3 py-1 rounded">{tag}</li>
+                ))}
+              </ul>
+              <div class="flex gap-4">
+                <a href={link} target="_blank" rel="noopener noreferrer" class="text-blue-400 underline">Visitar Proyecto</a>
+                <a href={github} target="_blank" rel="noopener noreferrer" class="text-blue-400 underline">Ver en GitHub</a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div> -->
