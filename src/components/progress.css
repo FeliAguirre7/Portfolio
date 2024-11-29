@@ -1,0 +1,38 @@
+/* progress.css */
+
+/* Suaviza el cambio de la barra de progreso */
+.progress-bar {
+  transition: width 0.5s ease, background-color 0.5s ease;
+  background-color: #4c51bf; /* Color del progreso */
+  height: 100%;
+  border-radius: 1.5rem; /* Bordes redondeados */
+  color: white;
+  text-align: center;
+  font-size: 0.75rem; /* Tamaño de texto más pequeño */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Color más oscuro de la barra al pasar el mouse */
+.progress-bar:hover {
+  background-color: #5a67d8;
+}
+
+/* Color de fondo gris claro de la barra */
+.bg-gray-300 {
+  background-color: #e2e8f0; /* Gris claro */
+}
+
+/* Ajustes de la altura y bordes del contenedor de la barra */
+.w-full {
+  width: 100%;
+}
+
+.rounded-3xl {
+  border-radius: 1.5rem;
+}
+
+.h-4 {
+  height: 1rem; /* Ajusta la altura de la barra */
+}
