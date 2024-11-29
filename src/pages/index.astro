@@ -12,6 +12,7 @@ import Proyects from '../components/Projects/Proyects.astro';
 import Carousel from "../components/Carousel.astro"
 import Footer from '../components/Footer.astro';
 import Contact from "../components/Contact.astro"
+import TecProgress from '../components/TecProgress.astro';
 ---
 
 <Layout title="Felipe Aguirre - Desarrollador y programador web">
@@ -60,10 +61,16 @@ import Contact from "../components/Contact.astro"
 		</div>
 		<SectionContainer>
 			<div class="container mx-auto my-10">
-    
-      <Carousel/>
-    </div>
+				<Carousel />
+			</div>
 		</SectionContainer>
+
+		<SectionContainer>
+			<div class="flex justify-center mx-auto mt-6 "> <!-- Cambia aquí -->
+				<TecProgress />
+			</div>
+		</SectionContainer>
+
 
 		<SectionContainer>
 		<h2 id="proyectos" class="text-white text-2x1 font-semibold mb-6 flex gap-x-2 items-center">

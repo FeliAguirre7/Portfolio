@@ -12,19 +12,20 @@ postgreSql:"https://img.shields.io/badge/PostgreSQL-4169E1?style=flat&logo=postg
 
 }
 
+
 const PROJECTS= [
     {
         title: "Plataforma E-Commerce Kimey PetShop",
-        description: "Página web E-commerce de articulos para mascotas con todas las funcionalidades que este tipo de aplicaciones necesita, gestión de favoritos, carrito de compras, panel de administración e integración con MercadoPago, autenticación de terceros, etc. También cuenta con un diseño fiel y consistente en todos los apartados del sitio con imagenes editadas por mi mismo",
+        description: "E-commerce para artículos de mascotas con funciones de carrito, favoritos, panel de administración, MercadoPago y autenticación de terceros. Diseño consistente con imágenes propias.",
         link:"https://www.youtube.com/watch?v=wqjOESK5LcA&ab_channel=FeliAguirre",
         github:"https://github.com/FeliAguirre7/Pet-Shop-PF-Henry",
-        media: "https://www.youtube.com/embed/wqjOESK5LcA", // Cambia "image" a "media" y proporciona la URL de embed del video
-        type: "video", // Agrega un campo "type" para especificar el tipo de media
+        media: "https://res.cloudinary.com/dqt0isvyc/image/upload/v1717441620/petshop2_mxo35p.jpg", // Cambia "image" a "media" y proporciona la URL de embed del video
+        type: "image", // Agrega un campo "type" para especificar el tipo de media 
         tags: [tecLogos.twind, tecLogos.nextJs, tecLogos.js],
     },
     {
         title: "Proyecto de paises y turismo",
-        description: "Plataforma ilustrativa e informativa, se basa en el uso de una API externa para renderizar distintas tarjetas de paises, ordenadas en distintas páginas y con la posibilidad de buscar algún país en especifico, de filtrar por continente o actividad turistica, y también la función de crear una actividad turistica para determinados paises.",
+        description: "Plataforma que utiliza una API para mostrar tarjetas de países. Permite buscar, filtrar por continente o actividad, y crear actividades turísticas para países seleccionados.",
         link: "https://second-project.vercel.app/",
         media:"https://res.cloudinary.com/dqt0isvyc/image/upload/v1717447645/countries_pi_d5mnmy.jpg",
         type:"image",
@@ -33,7 +34,7 @@ const PROJECTS= [
     },
     {
         title: "Sistema de gestión de embarcaciones y socios",
-        description: "La aplicación es una solución integral para un camping que gestiona embarcaciones, permitiendo a los socios agregar las suyas. Facilita el registro de usuarios, la asignación y control de embarcaciones con validaciones requeridas por el cliente, y monitorea el estado de las mismas, si se encuentran en el agua o no.",
+        description: "Aplicación para gestionar embarcaciones en un camping, facilitando el registro de usuarios, control de embarcaciones  y monitoreo de su estado.",
         link:"https://www.youtube.com/watch?v=C6Vhxo74FmY&ab_channel=EvelynNobille",
         github:"https://github.com/Club-de-pesca-El-Bigua",
         media: "https://res.cloudinary.com/dqt0isvyc/image/upload/v1721937326/El_bigua_presentacion_Moment_lnaoqz.jpg", // Cambia "image" a "media" y proporciona la URL de embed del video
@@ -44,6 +45,114 @@ const PROJECTS= [
 ---
 
 <style>
+  .tags-container {
+    
+    gap: 8px;
+  }
+  .tag-item {
+    display: inline-block;
+    margin: 0 4px;
+  }
+</style>
+
+<!-- Barra de Tabs -->
+<div class="sm:hidden">
+    <label for="tabs" class="sr-only">Proyectos</label>
+    <select id="tabs" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+        <option>Programación</option>
+        <option>Diseño</option>
+    </select>
+</div>
+
+<ul class="hidden text-sm font-medium text-center text-gray-500 rounded-lg shadow sm:flex dark:divide-gray-700 dark:text-gray-400">
+    <li class="w-full focus-within:z-10">
+        <a href="#" class="inline-block w-full p-4 text-gray-900 bg-gray-100 border-r border-gray-200 dark:border-gray-700 rounded-s-lg focus:ring-4 focus:ring-blue-300 active focus:outline-none dark:bg-gray-700 dark:text-white" aria-current="page">Programación</a>
+    </li>
+    <li class="w-full focus-within:z-10">
+        <a href="#" class="inline-block w-full p-4 bg-white border-r border-gray-200 dark:border-gray-700 hover:text-gray-700 hover:bg-gray-50 focus:ring-4 focus:ring-blue-300 focus:outline-none dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700">Diseño</a>
+    </li>
+</ul>
+
+<!-- Cards de Proyectos -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+    {
+        PROJECTS.map(({ title, description, tags, type, media, link, github }, index) => (
+            <div key={index} class="flex flex-col justify-between max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                <!-- Imagen o Video del Proyecto -->
+                <img class="rounded-t-lg" src={media} alt={title} style={{ height: "150px" }}/>
+                {/* {type === "video" ? (
+                    <iframe
+                        width="100%"
+                        height="150"
+                        src={media}
+                        title={title}
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        class="rounded-t-lg"
+                    ></iframe>
+                ) : (
+                    <img class="rounded-t-lg" src={media} alt={title} style={{ height: "150px" }}/>
+                )}
+                 */}
+                <!-- Descripción del Proyecto -->
+                <div class="p-5 flex-grow">
+                    <a  >
+                      <div class="flex items-center justify-between">
+
+                        <h5 class="mb-2 text-m font-bold tracking-tight text-red-300 opacity-80">{title}
+                          <span class="ml-2">
+                          {index === 0 || index === 2 ? <img alt="Static Badge" src="https://img.shields.io/badge/Front_End-purple"/>  : <img alt="Static Badge" src="https://img.shields.io/badge/Full_Stack-yellow"/> }
+                        </span>
+                        </h5>
+
+                      </div>
+                    </a>
+                    <p class="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400">{description}</p>
+
+                    <!-- Tecnologías del Proyecto -->
+                    <ul class="tags-container mb-3 grid grid-cols-2 gap-2">
+                    {tags.map((tag) =>
+                      tag.includes('https://') ? (
+                        <li key={tag} class="tag-item ">
+                          <img src={tag} alt="Technology logo" class="inline-block mr-2 p-1 h-7" />
+                        </li>
+                      ) : (
+                        <li key={tag} class="inline-block mr-2">{tag}</li>
+                      )
+                    )}
+                    </ul>
+
+                    <div class="flex flex-col items-center justify-center w-full mt-auto ">
+                    {index === 0 ? (
+                      <>
+                        <a href={link} class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" target="_blank" rel="noopener noreferrer">
+                            Ver Video
+                        </a>
+                        <span class="mt-2 text-xs text-red-500">(Deploy en mantenimiento)</span> 
+                      </>
+                    ) : (
+                      <a href={github} class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-gray-600 rounded-lg hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 dark:bg-gray-500 dark:hover:bg-gray-600 dark:focus:ring-gray-700 ml-2" target="_blank" rel="noopener noreferrer">
+                          Ver en GitHub
+                      </a>
+                    )}
+                </div>
+
+                    <!-- Enlaces al Proyecto -->
+                    {/* <a href={link} class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" target="_blank" rel="noopener noreferrer">
+                        Visitar Proyecto
+                    </a> 
+                    <a href={github} class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-gray-600 rounded-lg hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 dark:bg-gray-500 dark:hover:bg-gray-600 dark:focus:ring-gray-700 ml-2" target="_blank" rel="noopener noreferrer">
+                        Ver en GitHub
+                    </a> */}
+                </div>
+            </div>
+        ))
+    }
+</div>
+
+
+<!-- <style>
   .tags-container {
     display: flex;
     flex-wrap: wrap;
@@ -95,7 +204,7 @@ const PROJECTS= [
 }
 
 
-
+ -->
 
 
 <!-- ---
