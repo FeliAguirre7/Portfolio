@@ -66,10 +66,10 @@ const PROJECTS= [
 
 <ul class="hidden text-sm font-medium text-center text-gray-500 rounded-lg shadow sm:flex dark:divide-gray-700 dark:text-gray-400">
     <li class="w-full focus-within:z-10">
-        <a href="#" class="inline-block w-full p-4 text-gray-900 bg-gray-100 border-r border-gray-200 dark:border-gray-700 rounded-s-lg focus:ring-4 focus:ring-blue-300 active focus:outline-none dark:bg-gray-700 dark:text-white" aria-current="page">Programación</a>
+        <a href="#" class="inline-block w-full p-4 text-gray-900 bg-[#0b0629] border border-[#6b8f43] rounded" aria-current="page">Programación</a>
     </li>
     <li class="w-full focus-within:z-10">
-        <a href="#" class="inline-block w-full p-4 bg-white border-r border-gray-200 dark:border-gray-700 hover:text-gray-700 hover:bg-gray-50 focus:ring-4 focus:ring-blue-300 focus:outline-none dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700">Diseño</a>
+        <a href="#" class="inline-block w-full p-4 bg-[#0b0629] border border-[#6b8f43]">Diseño</a>
     </li>
 </ul>
 
@@ -77,7 +77,7 @@ const PROJECTS= [
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
     {
         PROJECTS.map(({ title, description, tags, type, media, link, github }, index) => (
-            <div key={index} class="flex flex-col justify-between max-w-sm hover:bg-[#0b062996] border border-[#6b8f43] rounded-lg shadow bg-[#0b062947]">
+            <div key={index} class="flex flex-col justify-between max-w-sm hover:bg-[#0b0629] border border-[#6b8f43] rounded-lg shadow bg-[#0b062996]">
                 <!-- Imagen o Video del Proyecto -->
                 <img class="rounded-t-lg" src={media} alt={title} style={{ height: "150px" }}/>
                 {/* {type === "video" ? (
