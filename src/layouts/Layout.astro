@@ -37,18 +37,17 @@ const { title } = Astro.props;
 	}
 	
 	body {
-    background-image: 
-        url('https://res.cloudinary.com/dqt0isvyc/image/upload/v1732903760/tjxp85wnjwl31n2emhzp.jpg'), 
-        radial-gradient(125% 125% at 50% 10%, #000000c6 40%, #63e 100%);
-    background-attachment: fixed;
-    background-size: cover;
-    background-repeat: no-repeat;
-    color: hsl(240, 58%, 22%);
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    margin: 0;
-    background-blend-mode: overlay; /* Esto mezcla la imagen con el degradado */
+		background-image: url('https://res.cloudinary.com/dqt0isvyc/image/upload/v1732903760/tjxp85wnjwl31n2emhzp.jpg'),
+		radial-gradient(125% 125% at 50% 10%, #00000052 40%, #63e 100%);
+        background-attachment: fixed;
+		background-blend-mode: overlay;
+        background-size: cover;
+        background-repeat: no-repeat;
+        color: hsl(240, 58%, 22%);
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        margin: 0;
 }
 
 .background {
@@ -58,9 +57,10 @@ const { title } = Astro.props;
     width: 100%;
     height: 100%;
     z-index: -1;
-    background: radial-gradient(125% 125% at 50% 10%, #0000006e 40%, #63e 100%);
-    background-image: url('https://res.cloudinary.com/dqt0isvyc/image/upload/v1732903760/tjxp85wnjwl31n2emhzp.jpg');
-    background-blend-mode: overlay; /* Asegúrate de que el fondo de la clase también tenga este blend */
+	
+    background: radial-gradient(125% 125% at 50% 10%, #00000048 40%, #63e 100%);
+	background-image:  url('https://res.cloudinary.com/dqt0isvyc/image/upload/v1732903760/tjxp85wnjwl31n2emhzp.jpg');
+	background-blend-mode: overlay;
 }
 
 </style>

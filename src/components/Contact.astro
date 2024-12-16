@@ -29,7 +29,7 @@
         <div class="flex flex-col justify-between p-4 leading-normal w-full">
             <h5 class="mb-2 text-2xl font-bold tracking-tight text-white">¡Contáctame!</h5>
             <p class="mb-3 font-normal text-white opacity-80">
-                Si necesitas a alguien con mucha dedicación y disciplina, estaré dispuesto a adaptarme a cualquier tipo de trabajo.
+                Si necesitas a alguien con mucha dedicación y disciplina, no dudes .
             </p>
     
             <!-- Formulario de Contacto -->
@@ -44,7 +44,7 @@
                 <div class="mb-4">
                     <label for="mensaje" class="block text-sm font-medium text-white">Mensaje</label>
                  
-                    <textarea id="mensaje" name="mensaje" rows="5" required class="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm text-white opacity-80 focus:ring-indigo-500 focus:border-indigo-500"></textarea>
+                    <textarea id="mensaje" name="mensaje" rows="5" required class="bg-black mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm text-white opacity-80 focus:ring-indigo-500 focus:border-indigo-500"></textarea>
                 </div>
     
                 <button type="submit" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 w-full">
@@ -53,14 +53,57 @@
             </form>
         </div>
 
-        <div id="successModal" class="hidden fixed inset-0 flex justify-center items-center bg-black bg-opacity-50">
-            <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-                <h3 class="text-xl font-bold text-green-600">¡Mensaje Enviado!</h3>
-                <p class="mt-2">Tu mensaje ha sido enviado correctamente. ¡Gracias por contactarnos!</p>
-                <button onclick="closeModal()" class="mt-4 bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">Cerrar</button>
-            </div>
+       
+    </div>
+
+    <div id="successModal" class="hidden fixed inset-0 flex justify-center items-center bg-black bg-opacity-50">
+        <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+            <h3 class="text-xl font-bold text-green-600">¡Mensaje Enviado!</h3>
+            <p class="mt-2">Tu mensaje ha sido enviado correctamente. ¡Gracias por contactarnos!</p>
+            <button onclick="closeModal()" class="mt-4 bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">Cerrar</button>
         </div>
     </div>
+    
+    <script>
+        // Función para manejar el envío del formulario
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();  // Prevenir el comportamiento por defecto del formulario
+    
+            // Limpiar los campos inmediatamente después de hacer clic en "Enviar"
+            document.getElementById('email').value = '';  // Limpiar campo de email
+            document.getElementById('mensaje').value = '';  // Limpiar campo de mensaje
+    
+            const form = new FormData(this);  // Crear un objeto con los datos del formulario
+    
+            // Enviar el formulario usando fetch (AJAX)
+            fetch('https://formspree.io/f/mzzpnekq', {  // Asegúrate de que la URL de Formspree sea la correcta
+                method: 'POST',
+                body: form
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Si la respuesta es exitosa, mostramos el modal
+                    showModal();
+                } else {
+                    alert('Hubo un error al enviar el mensaje. Intenta de nuevo.');
+                }
+            })
+            .catch(error => {
+                alert('Hubo un problema al enviar el mensaje. Intenta de nuevo.');
+                console.error('Error:', error);
+            });
+        });
+    
+        // Función para mostrar el modal de éxito
+        function showModal() {
+            document.getElementById('successModal').classList.remove('hidden');
+        }
+    
+        // Función para cerrar el modal
+        function closeModal() {
+            document.getElementById('successModal').classList.add('hidden');
+        }
+    </script>
 
     <!-- <div class="image-right-1">
         <img src="URL_DE_TU_IMAGEN" alt="Imagen 7">
