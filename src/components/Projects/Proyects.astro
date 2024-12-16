@@ -58,7 +58,7 @@ const PROJECTS= [
 <!-- Barra de Tabs -->
 <div class="sm:hidden">
     <label for="tabs" class="sr-only">Proyectos</label>
-    <select id="tabs" class="bg-[#0b0629] border border-[#6b8f43] text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+    <select id="tabs" class="bg-[#0b0629] border border-[#6b8f43] text-gray-900 text-sm rounded-lg ">
         <option>Programación</option>
         <option>Diseño</option>
     </select>
@@ -77,7 +77,7 @@ const PROJECTS= [
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
     {
         PROJECTS.map(({ title, description, tags, type, media, link, github }, index) => (
-            <div key={index} class="flex flex-col justify-between max-w-sm hover:bg-[#0b0629] border border-[#6b8f43] rounded-lg shadow bg-[#0b062947]">
+            <div key={index} class="flex flex-col justify-between max-w-sm hover:bg-[#0b062996] border border-[#6b8f43] rounded-lg shadow bg-[#0b062947]">
                 <!-- Imagen o Video del Proyecto -->
                 <img class="rounded-t-lg" src={media} alt={title} style={{ height: "150px" }}/>
                 {/* {type === "video" ? (
