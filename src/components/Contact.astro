@@ -81,18 +81,19 @@
                 body: form
             })
             .then(response => {
-                if (response.ok) {
-                    // Si la respuesta es exitosa, mostramos el modal
-                    showModal();
-                } else {
-                    alert('Hubo un error al enviar el mensaje. Intenta de nuevo.');
-                }
-            })
-            .catch(error => {
-                alert('Hubo un problema al enviar el mensaje. Intenta de nuevo.');
-                console.error('Error:', error);
-            });
+    if (response.ok) {
+        showModal();
+    } else {
+        // Obtener el cuerpo de la respuesta para más detalles sobre el error
+        response.text().then(text => {
+            alert('Error: ' + text);
         });
+    }
+})
+.catch(error => {
+    alert('Hubo un problema al enviar el mensaje. Intenta de nuevo.');
+    console.error('Error:', error);
+});
     
         // Función para mostrar el modal de éxito
         function showModal() {
